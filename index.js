@@ -30,7 +30,7 @@ function launchFireworks() {
 button.addEventListener('click', () => {
     clickCount++;
 
-    counterText.textContent = `Alan es ${clickCount} ${clickCount === 1 ? 'vez' : 'veces'} fruto`;
+    counterText.textContent = `Alan es ${clickCount} ${clickCount === 1 ? 'vez' : 'veces'} puto`;
     counterText.classList.add('counter-animate');
     setTimeout(() => {
         counterText.classList.remove('counter-animate');
@@ -45,7 +45,7 @@ button.addEventListener('click', () => {
             result.textContent = 'Definitivamente sí es';
             break;
         case 2:
-            result.textContent = 'Sigue siendo fruto';
+            result.textContent = 'Sigue siendo puto';
             break;
         default:
             result.textContent = 'Sí es y nunca va a dejar de serlo';
