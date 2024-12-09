@@ -28,7 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     button.addEventListener('click', () => {
+        console.log("Button clicked!"); // Debugging: Check if this logs on each click
         clickCount++;
+        console.log("clickCount:", clickCount); // Debugging: Check the value of clickCount
 
         counterText.textContent = `Alan es ${clickCount} ${clickCount === 1 ? 'vez' : 'veces'} puto`;
         counterText.classList.add('counter-animate');
