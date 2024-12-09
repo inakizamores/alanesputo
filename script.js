@@ -3,23 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const result = document.getElementById('result');
     const counterText = document.getElementById('counter-text');
     const fireworksContainer = document.getElementById('fireworks-container');
-    const bgMusic = document.getElementById('bg-music'); // Get the audio element
+    const bgMusic = document.getElementById('bg-music');
     let clickCount = 0;
-
-    // Function to handle audio playback
-    function playMusic() {
-      bgMusic.play().then(() => {
-        // Autoplay started successfully
-        console.log("Audio playing");
-      }).catch(error => {
-        // Autoplay failed. User interaction is needed.
-        console.error("Autoplay failed:", error);
-        // You could add a message here to prompt the user to click to play music
-      });
-    }
-
-    // Try to play the music as soon as the page loads
-    playMusic();
+    let isMusicPlaying = false; // Flag to track if music is already playing
 
     function createFirework() {
         const firework = document.createElement('div');
@@ -45,6 +31,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     button.addEventListener('click', () => {
         console.log("Button clicked!");
+
+        // Play music only if it's not already playing
+        if (!isMusicPlaying) {
+            bgMusic.play().then(() => {
+                isMusicPlaying = true;
+                console.log("Audio playing");
+            }).catch(error => {
+                console.error("Autoplay failed:", error);
+            });
+        }
+
         clickCount++;
         console.log("clickCount:", clickCount);
 
