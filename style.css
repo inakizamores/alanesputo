@@ -135,6 +135,19 @@ h1 {
          1px  1px 0 white;
 }
 
+.animate {
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 @keyframes pulse {
     0% {
         transform: scale(1);
